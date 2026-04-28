@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array Map and sorting</h2>
+    <button onclick="processArray()">click me</button>
+    <p id="original"></p>
+    <p id="mapped"></p>
+    <p id="ascending"></p>
+    <p id="descending"></p>
+    <script>
+        function processArray() {
+                // Step 1: Create an array
+                let numbers = [5, 2, 9, 1, 7];
+
+                // Step 2: Display original array
+                document.getElementById("original").innerHTML = "Original Array: " + numbers;
+
+                // Step 3: Map array (multiply each element by 3)
+                let mappedArray = numbers.map(function (num) {
+                    return num * 3;
+                });
+
+                document.getElementById("mapped").innerHTML =  "Mapped Array (×5): " + mappedArray;
+
+                // Step 4: Sort ascending
+                let ascending = [...mappedArray].sort(function (a, b) {
+                    return a - b;
+                });
+
+                document.getElementById("ascending").innerHTML = "Ascending Order: " + ascending;
+
+                // Step 5: Sort descending
+                let descending = [...mappedArray].sort(function (a, b) {
+                    return b - a;
+                });
+
+                document.getElementById("descending").innerHTML = "Descending Order: " + descending;
+            }
+    </script>
+</body>
+</html>
